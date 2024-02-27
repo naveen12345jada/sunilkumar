@@ -1,0 +1,136 @@
+
+to push a code to new repository in git 
+
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:naveen12345jada/naveen.git
+git push -u origin main
+
+
+
+to push a code to  existing  repository in git 
+
+
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+/////git remote add origin  git@github.com:naveen12345jada/naveen.git\\\\\\\\\ {no need of command for existing repository }
+git pull --rebase origin main
+git push -u origin main
+
+
+Then install the live-server package globally
+
+npm install -g live-server
+
+to show the output in browser we have to type a command live-server
+
+(if you find an error just type below command and the error will be removed)
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+
+
+
+
+prettier default console.log
+
+
+
+
+{
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  "Print to console": {
+    "scope": "javascript,typescript",
+    "prefix": "cl",
+    "body": ["console.log();"],
+    "description": "Log output to console"
+  }
+}
+
+
+
+
+HTML NAVEEN WEB PROJECT DESIGN
+
+
+html:5 shortcut to display html syntax
+
+note----without html class name we can give directly tag name as a class name in css
+
+ex <nav></nav> in html
+in css nav{ }
+
+2) text decoration means the text is aligned with underlines and to remove make this text decoration is none
+ 
+
+icons import link:
+
+https://www.toptal.com/designers/htmlarrows/arrows/
+
+
+to add font styles in your website
+
+https://fonts.google.com/
+
+
+to give a comment to any programming language shortcut
+
+ctrl+?
+
+to clone any code 
+
+git clone give the path
+
+to add reviews to your websit  
+font awesome 4 cdn
+https://bootstrapcdn-dev-pr-1284.herokuapp.com/fontawesome/
+search for font awesome 4 icons in google (to give star symbols)
+
+
+
+
+The @import rule allows you to import a style sheet into another style sheet. 
+The @import rule must be at the top of the document (but after any @charset declaration). 
+The @import rule also supports media queries, so you can allow the import to be media-dependent.
+
+
+ <nav class="navbar"></nav>  <!--this was mandatory to apply footer section in home page or any other page   -->
+
+      <footer></footer>     <!--this was mandatory to apply footer section in home page or any other page   -->
+
+
+
+
+applying styles when files are present on different location:-
+
+1] what do when file is present on same folder ?
+
+A)    <link rel="stylesheet" href="home.css"> ----->  by adding file name 
+
+
+2] what do when file is present on different  folder ?
+
+A)  <link rel="stylesheet" href="css/home.css"> ----->  by adding folder name and  file name
+
+
+3] what do when file is present  up on   folder ?
+
+A)  <link rel="stylesheet" href="../home.css"> -----> by adding ../ and  file name 
+
+4] what do when file is present  two level up on   folder ?
+
+A)<link rel="stylesheet" href="../../home.css"> -----> by adding ../../ and  file name
+
+5] what do when file is present  two level up on  and present on different folder ?
+
+A)<link rel="stylesheet" href="../../foldername/home.css"> -----> by adding ../../foldername/ and  file name
+
+

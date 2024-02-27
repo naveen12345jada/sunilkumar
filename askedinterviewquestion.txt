@@ -1,0 +1,238 @@
+5 new tags in HTML,Doctype usage,difference between <strong> & <bold>,types of CSS,usage,link CSS ,JavaScript file to an HTML file,change image to link,program to enter 1 to 12 element serially in 3*4 matrix,get & post difference,what is new in CSS3,star pattern program
+
+New tags of HTML5, Types of CSS and their codes, swap two numbers.
+
+Why is that label on your form not taking your width declaration? How can you remove your border from the fieldset? Why keep the button outside of the fieldset?
+
+What is the Box System? How does an inline-block work? What does visibility do? *There were more questions, but I do remember the above more clearly.
+
+1. How you maintain the centralize data storage in react ? 2. Write an array of numbers, print the unique values of array 3. Write a program to Sum all the numbers of array, 4. How to fetch the values from the store 5. Tell me about some hooks 6. #id_abc{color:yellow } .abc{color: red} div{color:blue} Which CSS will be applicable for div. <div id="id_abc" class="abc">Test</div> 7. One Javascript question on button click. 8. Error boundaries in component.
+
+
+----------------deloite front end  interview questions----------------------------------------
+
+
+ES6 features & latest ones
+Promise
+How angular works basically?
+Callback
+Pipes -types & how to install it from cmd
+How to call api?
+what is main.ts file?
+Component & directive difference
+what is Arrow Functions?
+Difference between = = & = = =
+
+Function Prototype
+Function binding
+Type of
+Object Prototype
+Array prototype
+
+React basics 
+
+What is Doctype, semantic elements, user strict in js, Pseudo-classes, Promise, grid vs flex,
+2-3 and programing questions- what is the output of the program.
+Dependency Injection(how Many Instances you made)
+Promise
+
+Different tags used to develop a web page
+
+basic ES6 promises(syntax,uses),async/await,call/apply/bind,diff. display and visibility, 
+position css , some outputs questions.
+
+
+Currying, Closure, let, var, IIFE, Promises
+
+Html demerit
+Angular inheritance
+Box model
+
+Asked Basic questions like CSS selector, Callback, Promise, box model in css, semantic elements, user strict in js, What is Doctype, Async/Await, CSS Specificity.
+
+Basic CSS and JS Questions:
+
+CSS:
+How do you center the div center horizontally and vertically.
+Css box model, Display and Position property.
+Css Specificity and how to calculate.
+
+Javascript:
+what is the difference bet. normal function and Arrow function
+array.map method.
+diff. let, var, const.
+how to create object in JS.
+object.seal and freeze method
+Event Propagation in js.
+IIFE
+what is prototype and how to achieve inheritance in JS.
+array methods[sort, slice, splice, reverse, split, join]
+
+what is content attribute in css
+
+What happens when you type a URL in browser?
+1 Answer
+How can we create routing without any framework with pure Javascript
+1 Answer
+How can we vertically align a 400 px div in CSS?
+1 Answer
+Do you have any experience with deployment of website or application on a server?
+
+1. Coding Test - build a website from a design. Make it responsive.
+2. Face-to-face - informal conversation about your previous work, current projects, how you learn, how you work under pressure, how you will fit in to the company culture
+
+
+
+
+
+--------------ibm ---------------------
+
+Explain React and Redux in a few words
+how to sort a table in html and javascript
+
+CSS: differences between display and visibility
+2. difference between === and ==
+3. scope of variables, eg. a variable that is not declared is JS is global.
+4. validations on form
+5. undefined vs null
+other Angular (only basic, not observables or any Rxjs related) questions, css questions
+
+
+
+---------------capgemini-------------
+Paranthesis ballance algorithm
+- How javascript works underneath in binary translation
+- How does the V8 engine works
+- The SOLID principles
+- OOP
+- Design Pattern
+
+. How to make api calls within React.
+2. How is React different from other options, and what's the advantage of React.
+3. JavaScript scope.
+4. What are closures in JavaScript.
+5. Data structure challenges.
+Javascript object creation
+
+What is closure, Hoisting, Broadcast,Emit and On
+
+---------------------------------infosysis------------------------------
+What is Promise in JavaScript?
+
+Removing duplicate from an array
+
+Explain redux flow of work
+Explain why do we need arrow functions
+Explain redux saga
+Explain redux
+Did you face any issue while working and how did you overcome it? Share any one of them.
+What is state and what happens if we updates the state?
+How your daily works go on?
+
+
+Advance concepts like Promise, React, React Hooks, Redux, etc.
+
+How to Reverse the string?
+
+Why SPA? What are the benefits over traditional method?
+2: What are the promises and observables? What are the differences?
+
+
+
+
+
+--------------node -------------nnnnnnnnnnnWhat are event emitters in NodeJS?
+
+What is middleware?
+What is npm?
+Explain hoisting in JavaScript
+Explain Libuv
+Name Input Arguments For Asynchronous Queue
+What is REPL?
+Differentiate between readFile and createReadStream
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How would you handle asynchronous programming in JavaScript?
+
+
+
+
+selenium jar files ----https://www.selenium.dev/downloads/
+
+
+driver.exe of chrome --- https://chromedriver.chromium.org/downloads  --- based chrome browser version
+
+https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/121.0.6167.85/win64/chromedriver-win64.zip
+
+
+driver.exe of firefox --- https://github.com/mozilla/geckodrive/releases ---- based on firefox browser version
+
+
+
+package selenium1;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.google.common.io.Files;
+
+import java.io.File;
+
+
+import org.openqa.selenium.Alert;
+
+public class Alerts {
+
+	public static void main(String[] args) throws Exception{
+		// TODO Auto-generated method stub
+		System.setProperty("Webdriver.chrome.driver", "C:\\Users\\jadan\\OneDrive\\Documents\\driversselenium\\chromedriver_win32");
+        WebDriver driver =new ChromeDriver();
+        try{
+        driver.navigate().to("http://183.82.103.245/nareshit/index.php");

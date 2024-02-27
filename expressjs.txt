@@ -1,0 +1,118 @@
+
+Express js 
+Express js is a frame work and  it is a top  of its node js using express js we can handle exceptions
+Express-generator is a node  module  creates minimal structured folder for a server if it is already using an express
+
+To install express we use command as “npm install express -g”  g indicates need to install express js as globally 
+        Npm install express-generator -g
+
+Whatever folder you want to create server go to that folder and type as” express  filename” command and it will creates minimal structured folder for a server if it is already using an express and due to this whatever  minium code we do  in node js it will create under the   bin  folder under www file you will see minimum code creation of under node js server  and also handling of errors in node js will be written in  this file and we start working on web services
+And also for express module code is also created under app.js file with the  help of         
+
+Npm install express-generator -g
+
+Package .json file  under package .json file gives  the project  details  means project name, version ,private , dependencies , authors etc…
+dependencies  : it lists all the node modules  in which current server is depending on  along with the version numbers or internal dependencies 
+
+so instead of install one node module you can install simply  “npm install “ it will installs all node modules 
+
+package.json file name must be package.json file name you don’t rename if you rename it and it will give you the error
+
+dev dependencies : internally code is depending on is called dev  dependicies
+
+but for express you have to run as npm install express - > it will go for package.json file for running node js code   you can use node bin\www or npm start in case of express project  because in package .json file it will give the start command- start  node bin\www
+
+whatever files you renamed and those renamed names will be included in the package.son file11
+
+because of event looping in  nodejs it  performing asynchronous  operation  eventhough it is a single threaded model  it will  take a set of instrucuctions and put in an event looping or call back and execute multiple requests
+
+package-lock.json it will give you the all entries of node modules wether you include node modules in package.json or not  it will include all internal dependency node modules entries in package-lock.json file and package-lock.jsonfile is not added into git hub by default it is created by npm install command even though if u deleted  package-lock.jsonfile by default it created by npm install command 
+
+.gitignore : it will ignore the files in git hub when you keep this command  git will not watch the  files it will discard it even though u do the changes in a file  if u remove that file under git ignore then git hub  is watching that files also
+Ex : node modules 
+ 
+Public is the folder  where you keep the static node js resources  where  every one can acess to this resources but if browser understands it will execute in the browser  
+Server is only for holding the resources and it never executes client  side instructions on server side  that is public folder  under app.js we have static folder 
+
+_dirname is node js predefined folder in node js it will give source file path and path is a predefined module and also we can rename the public folder  in server
+
+
+
+
+
+How to use npm?
+There are two ways to install a package using npm: globally and locally.
+•	Globally − This method is generally used to install development tools 
+and CLI based packages. To install a package globally, use the following code.
+npm install -g <package-name>
+•	Locally − This method is generally used to install 
+frameworks and libraries. A locally installed package can be used 
+only within the directory it is installed. To install a package locally, 
+use the same command as above without the -g flag.
+npm install <package-name>
+
+
+package.json file, which has all the details about our project. npm makes it easy for us to set up this file. Let us set up our development project.
+
+Step 1 − Start your terminal/cmd, create a new folder named hello-world and cd (create directory) into it −
+
+npm init info
+Step 2 − Now to create the package.json file using npm, use the following code.
+
+npm init
+
+
+
+To confirm that Express has installed correctly, run the following code.
+
+ls node_modules #(dir node_modules for windows)
+Tip − The --save flag can be replaced by the -S flag. This flag ensures that Express is added as a dependency to our
+
+
+package.json file. This has an advantage, the next time we need to install all the dependencies of our project we can just run the command npm install and it will find the dependencies in this file and install them for us.
+
+This is all we need to start development using the Express framework. To make our development process a lot easier, we will install a tool from npm, nodemon. This tool restarts our server as soon as we make a change in any of our files, otherwise we need to restart the server manually after each file modification. To install nodemon, use the following command −
+ 
+
+
+
+
+
+
+We can also have multiple different methods at the same route. For example,
+
+var express = require('express');
+var app = express();
+
+app.get('/hello', function(req, res){
+   res.send("Hello World!");
+});
+
+app.post('/hello', function(req, res){
+   res.send("You just called the post method at '/hello'!\n");
+});
+
+app.listen(3000);
+
+  
+
+
+Pug is a templating engine for Express.
+
+
+To use Pug with Express, we need to install it,
+
+npm install --save pug
+
+
+
+
+
+
+
+ 
+
+
+
+
+

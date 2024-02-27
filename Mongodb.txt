@@ -1,0 +1,416 @@
+------------------------------------------------------------mongo db installation---------------------------------
+
+
+
+To install MongoDB on Windows, first download the latest release of MongoDB from 
+(https://www.mongodb.com/download-center.
+credentials of Mongo db :
+mail id : ramadevi15020@gmail.com 
+password : Naveen@1234
+ )
+
+ official installation of Mongo db 
+
+type in google ---> mongo db download 
+ 
+or( paste the linkn   directly )
+https://www.mongodb.com/try/download/community
+
+version -- latest
+
+platform ---windows 64
+
+package --- msi 
+
+click on download after all the installing 
+
+
+don't install enterprise version  install only for community version only 
+
+important notes of mongo db  :
+
+1)mongo db is nosql database we are not going to write any queiries and it has default commands
+2) mongo db stores data in the form of json data or (binary) 
+3) by default mongo db  server is running in 27017 port   
+4) By Default along with mongo db we have mongo compass
+5) for mongo db we have command line interface any time we want to interact with db cli will helps
+
+
+command line interface CLI (mongo db (go to local file) ) &&&& (Graphical user interface )
+6) show dbs ---> it will show the all databases names in the database 
+7)cls----> it will clear 
+8)use ----> is a predefined comand you can switch to the new database and create a new database
+use latest_Trends ( it will move to latest_Trends database)
+
+9)db will tell you current database you are using 
+
+10) to create a collection ---->  db.createCollection("userAccountDetails") ---> it will create a document in cli
+
+11)to create a one record in document or collection ------> db.userAccountDetails.insertOne({userId:"naveen",password:"Naveen@1234"})
+12)db.userAccountDetails.find()-----------> it will find all the all collections  in that database using find Method
+13) db.userAccountDetails.insertOne({userId:"naveen",password:"Naveen@1234",_id:"123"}) ----By default mongo db creates a id and also u can add ur custom id if u give custom id it will take and do not assign default _id 
+ 
+14) schema indicates a structure ( for rdbms we need to insert schema or structure of the table before we are creating but in mongo db we donot need to define schema)
+
+15 ) in mongo under collections we have different structure 
+
+16 ) for each and every insertion of record it will take more time and hectic and miss match and we will go for mongo compass and long with (gui) tool and it will installed with mongo db
+
+17) mongo compass is just an interface and  by default  it will installed along with mongo db using mongo compass we can connect other servers which is running other systems 
+
+
+---------------Actual Mongo db ---------------------
+
+18 ) using Find Symbol in mongo db u can find  the list of the data in the database  and you can filter the data by using Filter symbol
+
+19)you can add data by using symbol add data and don"t miss match the double inverted commas  and alll  are placed in double inverted commas
+
+
+for any doubts you will go to  this web site npmjs.com you will found a solution for that 
+ 
+
+  
+
+Writing clean, maintainable, and efficient code using programming language  Java
+Developing responsive and user-friendly web interfaces using HTML, CSS, and JavaScript
+Writing and optimizing SQL queries for data manipulation and retrieval.
+
+
+
+
+
+
+
+-----------------------------------my Mongo db   above or some  wrong -------------------------------
+
+
+
+mongoshell is important for mongo db and u need to install before running any program in the serever and copy the path of installed mongoshell up to bin folder --->paste it on system environment variables --->path--->new---> and click ok 
+
+
+-----------------------code to connect  nodejs server to mongo db ----------------------------------------
+
+const { MongoClient } = require('mongodb');
+
+const uri = "mongodb://localhost:27017/";
+const client = new MongoClient(uri);
+
+async function run() {
+  try {
+    await client.connect();
+    const db = client.db('blog');
+    const collection = db.collection('posts');
+
+    // Find the first document in the collection
+    const first = await collection.findOne();
+    console.log(first);
+  } finally {
+    // Close the database connection when finished or an error occurs
+    await client.close();
+  }
+}
+run().catch(console.error);
+
+
+
+
+----another server  programme -----
+
+
+
+var express = require('express');
+var app = express();
+
+app.get('/:id', function(req, res){
+   res.send('The id you specified is ' + req.params.id);
+   const { MongoClient } = require('mongodb');
+
+const uri = "mongodb://localhost:27017/";
+const client = new MongoClient(uri);
+
+async function run() {
+  try {
+    await client.connect();
+    const db = client.db('blog');
+    const collection = db.collection('posts');
+
+    // Find the first document in the collection
+    const first = await collection.findOne({}, {title: 1, date: 1});
+    console.log(first);
+  } finally {
+    // Close the database connection when finished or an error occurs
+    await client.close();
+  }
+}
+run().catch(console.error);
+
+});
+app.listen(3000);
+
+-------------------------------------------------------------------Mongoshell commands in commmand prompt------------------
+
+
+
+
+
+
+
+
+Microsoft Windows [Version 10.0.22621.3007]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\jadan>mongosh
+Current Mongosh Log ID: 65c75ffe08cfdbc111ad2418
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.4
+Using MongoDB:          7.0.5
+Using Mongosh:          2.1.4
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-02-10T12:06:04.878+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> db.posts.find( {category: "News"} )
+
+test> db.posts.find( {category: "naveen"} )
+
+test> db.posts.find( {category: "nav"} )
+
+test> show dbs
+admin    40.00 KiB
+config  108.00 KiB
+local    40.00 KiB
+naveen   72.00 KiB
+test> dbs.posts.find( {category: "nav"} )
+ReferenceError: dbs is not defined
+test> db.posts.find( {"naveen"} )
+Uncaught:
+SyntaxError: Unexpected token (1:24)
+
+> 1 | db.posts.find( {"naveen"} )
+    |                         ^
+  2 |
+
+test> show dbs
+admin    40.00 KiB
+config  108.00 KiB
+local    40.00 KiB
+naveen   72.00 KiB
+test> use blog
+switched to db blog
+blog> db.createCollection("posts")
+{ ok: 1 }
+blog> db.posts.insertOne({"title": "Post 1"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('65c7620708cfdbc111ad2419')
+}
+blog> db.posts.insertOne({
+...   title: "Post Title 1",
+...   body: "Body of post.",
+...   category: "News",
+...   likes: 1,
+...   tags: ["news", "events"],
+...   date: Date()
+... })
+{
+  acknowledged: true,
+  insertedId: ObjectId('65c7627a08cfdbc111ad241a')
+}
+blog> db.posts.insertMany([
+...   {
+...     title: "Post Title 2",
+...     body: "Body of post.",
+...     category: "Event",
+...     likes: 2,
+...     tags: ["news", "events"],
+...     date: Date()
+...   },
+...   {
+...     title: "Post Title 3",
+...     body: "Body of post.",
+...     category: "Technology",
+...     likes: 3,
+...     tags: ["news", "events"],
+...     date: Date()
+...   },
+...   {
+...     title: "Post Title 4",
+...     body: "Body of post.",
+...     category: "Event",
+...     likes: 4,
+...     tags: ["news", "events"],
+...     date: Date()
+...   }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('65c762ef08cfdbc111ad241b'),
+    '1': ObjectId('65c762ef08cfdbc111ad241c'),
+    '2': ObjectId('65c762ef08cfdbc111ad241d')
+  }
+}
+blog> db.posts.find()
+[
+  { _id: ObjectId('65c7620708cfdbc111ad2419'), title: 'Post 1' },
+  {
+    _id: ObjectId('65c7627a08cfdbc111ad241a'),
+    title: 'Post Title 1',
+    body: 'Body of post.',
+    category: 'News',
+    likes: 1,
+    tags: [ 'news', 'events' ],
+    date: 'Sat Feb 10 2024 17:18:10 GMT+0530 (India Standard Time)'
+  },
+  {
+    _id: ObjectId('65c762ef08cfdbc111ad241b'),
+    title: 'Post Title 2',
+    body: 'Body of post.',
+    category: 'Event',
+    likes: 2,
+    tags: [ 'news', 'events' ],
+    date: 'Sat Feb 10 2024 17:20:07 GMT+0530 (India Standard Time)'
+  },
+  {
+    _id: ObjectId('65c762ef08cfdbc111ad241c'),
+    title: 'Post Title 3',
+    body: 'Body of post.',
+    category: 'Technology',
+    likes: 3,
+    tags: [ 'news', 'events' ],
+    date: 'Sat Feb 10 2024 17:20:07 GMT+0530 (India Standard Time)'
+  },
+  {
+    _id: ObjectId('65c762ef08cfdbc111ad241d'),
+    title: 'Post Title 4',
+    body: 'Body of post.',
+    category: 'Event',
+    likes: 4,
+    tags: [ 'news', 'events' ],
+    date: 'Sat Feb 10 2024 17:20:07 GMT+0530 (India Standard Time)'
+  }
+]
+blog> db.posts.find()
+[
+  { _id: ObjectId('65c7620708cfdbc111ad2419'), title: 'Post 1' },
+  {
+    _id: ObjectId('65c7627a08cfdbc111ad241a'),
+    title: 'Post Title 1',
+    body: 'Body of post.',
+    category: 'News',
+    likes: 1,
+    tags: [ 'news', 'events' ],
+    date: 'Sat Feb 10 2024 17:18:10 GMT+0530 (India Standard Time)'
+  },
+  {
+    _id: ObjectId('65c762ef08cfdbc111ad241b'),
+    title: 'Post Title 2',
+    body: 'Body of post.',
+    category: 'Event',
+    likes: 2,
+    tags: [ 'news', 'events' ],
+    date: 'Sat Feb 10 2024 17:20:07 GMT+0530 (India Standard Time)'
+  },
+  {
+    _id: ObjectId('65c762ef08cfdbc111ad241c'),
+    title: 'Post Title 3',
+    body: 'Body of post.',
+    category: 'Technology',
+    likes: 3,
+    tags: [ 'news', 'events' ],
+    date: 'Sat Feb 10 2024 17:20:07 GMT+0530 (India Standard Time)'
+  },
+  {
+    _id: ObjectId('65c762ef08cfdbc111ad241d'),
+    title: 'Post Title 4',
+    body: 'Body of post.',
+    category: 'Event',
+    likes: 4,
+    tags: [ 'news', 'events' ],
+    date: 'Sat Feb 10 2024 17:20:07 GMT+0530 (India Standard Time)'
+  }
+]
+blog> db.posts.find( {category: "News"} )
+[
+  {
+    _id: ObjectId('65c7627a08cfdbc111ad241a'),
+    title: 'Post Title 1',
+    body: 'Body of post.',
+    category: 'News',
+    likes: 1,
+    tags: [ 'news', 'events' ],
+    date: 'Sat Feb 10 2024 17:18:10 GMT+0530 (India Standard Time)'
+  }
+]
+blog> db.posts.find( {: "News"} )
+Uncaught:
+SyntaxError: Unexpected token (1:16)
+
+> 1 | db.posts.find( {: "News"} )
+    |                 ^
+  2 |
+
+blog> db.posts.find( {category: "News"} )
+[
+  {
+    _id: ObjectId('65c7627a08cfdbc111ad241a'),
+    title: 'Post Title 1',
+    body: 'Body of post.',
+    category: 'News',
+    likes: 1,
+    tags: [ 'news', 'events' ],
+    date: 'Sat Feb 10 2024 17:18:10 GMT+0530 (India Standard Time)'
+  }
+]
+blog> db.posts.find({}, {title: 1, date: 1})
+[
+  { _id: ObjectId('65c7620708cfdbc111ad2419'), title: 'Post 1' },
+  {
+    _id: ObjectId('65c7627a08cfdbc111ad241a'),
+    title: 'Post Title 1',
+    date: 'Sat Feb 10 2024 17:18:10 GMT+0530 (India Standard Time)'
+  },
+  {
+    _id: ObjectId('65c762ef08cfdbc111ad241b'),
+    title: 'Post Title 2',
+    date: 'Sat Feb 10 2024 17:20:07 GMT+0530 (India Standard Time)'
+  },
+  {
+    _id: ObjectId('65c762ef08cfdbc111ad241c'),
+    title: 'Post Title 3',
+    date: 'Sat Feb 10 2024 17:20:07 GMT+0530 (India Standard Time)'
+  },
+  {
+    _id: ObjectId('65c762ef08cfdbc111ad241d'),
+    title: 'Post Title 4',
+    date: 'Sat Feb 10 2024 17:20:07 GMT+0530 (India Standard Time)'
+  }
+]
+blog> db.posts.updateOne( { title: "Post Title 1" }, { $set: { likes: 2 } } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+blog> db.posts.updateMany({}, { $inc: { likes: 1 } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+blog> db.posts.updateMany({}, { $inc: { likes: 1 } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+blog>

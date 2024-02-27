@@ -1,0 +1,10 @@
+Bubble Sort ======>It is the simplest sort method which performs sorting by repeatedly moving the largest element to the highest index of the array. It comprises of comparing each element to its adjacent element and replace them accordingly.
+
+Selection Sort.
+Bubble Sort.
+Insertion Sort.
+Merge Sort.
+Quick Sort.
+Heap Sort.
+Counting Sort.
+Radix Sort.

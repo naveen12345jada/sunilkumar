@@ -1,0 +1,410 @@
+
+//how to run a node js as a  server 
+
+The official Node.js website has installation instructions for Node.js: https://nodejs.org
+
+Getting Started
+Once you have downloaded and installed Node.js on your computer, let's try to display "Hello World" in a web browser.
+
+Create a Node.js file named "myfirst.js", and add the following code:
+
+myfirst.js ( simple node js server creation ) 
+
+var http = require('http');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.end('Hello World!');
+}).listen(8080);
+
+
+
+Save the file on your computer: C:\Users\Your Name\myfirst.js
+
+The code tells the computer to write "Hello World!" if anyone (e.g. a web browser) tries to access your computer on port 8080.
+
+For now, you do not have to understand the code. It will be explained later.
+
+Command Line Interface
+Node.js files must be initiated in the "Command Line Interface" program of your computer.
+
+How to open the command line interface on your computer depends on the operating system. For Windows users, press the start button and look for "Command Prompt", or simply write "cmd" in the search field.
+
+----------------------(to run node js server you need to follow this step)----------------
+
+Navigate to the folder that contains the file "myfirst.js", the command line interface window should look something like this:
+
+C:\Users\Your Name>_
+Initiate the Node.js File
+The file you have just created must be initiated by Node.js before any action can take place.
+
+Start your command line interface, write node myfirst.js and hit enter:
+
+Initiate "myfirst.js":
+
+C:\Users\Your Name>node myfirst.js
+Now, your computer works as a server!
+
+If anyone tries to access your computer on port 8080, they will get a "Hello World!" message in return!
+
+Start your internet browser, and type in the address: http://localhost:8080
+
+
+
+
+to stop the server -------------->  ctrl + c
+
+
+to go to the particular folder (either inside or outside ) -------> cd foldername 
+
+if we have subfolders first u  need to go "root folder" and then you have to go  "sub folder"
+
+cd rootfoldername 
+cd subfoldername
+
+
+
+
+note--- if you do changes in node  js file and when u refresh on the server it will not update in the server u need to stop server and again u need to run 
+
+node filename.jsextension (run the node js server)
+
+
+./ to locate the module, that means that the module is located in the same folder as the Node.js file.
+
+
+
+var http = require('http');
+var dt = require('./myfirstmodule');  //file  including within the same module and using export key word from another file 
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write("The date and time are currently: " + dt.myDateTime());
+  res.end();
+}).listen(8080);
+
+---------------------------
+
+The first argument of the res.writeHead() method is the status code, 200 means that all is OK, the second argument is an object containing the response headers.
+
+The function passed into the http.createServer() has a req argument that represents the request from the client, as an object (http.IncomingMessage object).
+
+To include the File System module, use the require() method:
+ex : var fs = require('fs');
+
+--------------------------
+
+Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
+
+To include the HTTP module, use the require() method
+
+To include the HTTP module, use the require() method:
+
+var http = require('http');
+
+
+The HTTP module can create an HTTP server that listens to server ports and gives a response back to the client.
+
+
+
+
+
+var http = require('http');
+
+//create a server object:
+http.createServer(function (req, res) {
+  res.write('Hello World!'); //write a response to the client
+  res.end(); //end the response
+}).listen(8080); //the server object listens on port 8080
+
+
+
+
+
+---------------------Read the Query String-----------
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write(req.url);
+  res.end();
+}).listen(8080);
+
+
+The first argument of the res.writeHead() method is the status code, 200 means that all is OK,
+
+
+
+
+
+
+
+--------------Split the Query String------------
+There are built-in modules to easily split the query string into readable parts, such as the URL module.
+
+Example
+Split the query string into readable parts:
+
+var http = require('http');
+var url = require('url');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  var q = url.parse(req.url, true).query;
+  var txt = q.year + " " + q.month;
+  res.end(txt);
+}).listen(8080);
+
+
+
+
+-------------------- file system-----------------
+Common use for the File System module:
+
+Read files
+Create files
+Update files
+Delete files
+Rename files
+
+
+
+Read Files
+The fs.readFile() method is used to read files on your computer.
+
+demofile1.html
+
+<html>
+<body>
+<h1>My Header</h1>
+<p>My paragraph.</p>
+</body>
+</html>
+
+
+
+
+
+var http = require('http');
+var fs = require('fs');
+http.createServer(function (req, res) {
+  //Open a file on the server and return its content:
+  fs.readFile('fs1.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    res.end();
+  });
+}).listen(8080);
+
+
+--------------create files--------------
+
+
+he File System module has methods for creating new files:
+
+fs.appendFile()
+fs.open()
+fs.writeFile()
+
+
+The fs.appendFile() method appends specified content to a file. If the file does not exist, the file will be created:
+
+
+var fs = require('fs');
+
+//create a file named mynewfile1.txt:
+fs.appendFile('mynewfile1.txt', 'Hello content!', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+
+
+
+
+The fs.open() method takes a "flag" as the second argument, if the flag is "w" for "writing", the specified file is opened for writing. If the file does not exist, an empty file is created:
+
+Example
+Create a new, empty file using the open() method:
+
+var fs = require('fs');
+
+fs.open('mynewfile2.txt', 'w', function (err, file) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+
+
+
+The fs.writeFile() method replaces the specified file and content if it exists. If the file does not exist, a new file, containing the specified content, will be created:
+
+Example
+Create a new file using the writeFile() method:
+
+var fs = require('fs');
+
+fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+
+
+
+
+Update Files
+The File System module has methods for updating files:
+
+fs.appendFile()
+fs.writeFile()
+The fs.appendFile() method appends the specified content at the end of the specified file:
+
+
+The fs.appendFile() method appends the specified content at the end of the specified file:
+
+Example
+Append "This is my text." to the end of the file "mynewfile1.txt":
+
+var fs = require('fs');
+
+fs.appendFile('mynewfile1.txt', ' This is my text.', function (err) {
+  if (err) throw err;
+  console.log('Updated!');
+});
+The fs.writeFile() method replaces the specified file and content:
+
+Example
+Replace the content of the file "mynewfile3.txt":
+
+var fs = require('fs');
+
+fs.writeFile('mynewfile3.txt', 'This is my text', function (err) {
+  if (err) throw err;
+  console.log('Replaced!');
+});
+
+
+
+
+
+
+
+
+
+
+Delete Files
+To delete a file with the File System module,  use the fs.unlink() method.
+
+The fs.unlink() method deletes the specified file:
+
+Example
+Delete "mynewfile2.txt":
+
+var fs = require('fs');
+
+fs.unlink('mynewfile2.txt', function (err) {
+  if (err) throw err;
+  console.log('File deleted!');
+});
+Rename Files
+To rename a file with the File System module,  use the fs.rename() method.
+
+The fs.rename() method renames the specified file:
+Delete Files
+To delete a file with the File System module,  use the fs.unlink() method.
+
+The fs.unlink() method deletes the specified file:
+
+Example
+Delete "mynewfile2.txt":
+
+var fs = require('fs');
+
+fs.unlink('mynewfile2.txt', function (err) {
+  if (err) throw err;
+  console.log('File deleted!');
+});
+Rename Files
+To rename a file with the File System module,  use the fs.rename() method.
+
+The fs.rename() method renames the specified file:
+
+Example
+Rename "mynewfile1.txt" to "myrenamedfile.txt":
+
+
+
+var fs = require('fs');
+
+fs.rename('mynewfile1.txt', 'myrenamedfile.txt', function (err) {
+  if (err) throw err;
+  console.log('File Renamed!');
+});
+
+Example
+Rename "mynewfile1.txt" to "myrenamedfile.txt":
+
+var fs = require('fs');
+
+fs.rename('mynewfile1.txt', 'myrenamedfile.txt', function (err) {
+  if (err) throw err;
+  console.log('File Renamed!');
+});
+
+
+
+
+
+-------------------url-----------------
+
+var url = require('url');
+var adr = 'http://localhost:8080/default.htm?year=2017&month=february';
+//Parse the address:
+var q = url.parse(adr, true);
+
+/*The parse method returns an object containing url properties*/
+console.log(q.host);
+console.log(q.pathname);
+console.log(q.search);
+
+/*The query property returns an object with all the querystring parameters as properties:*/
+var qdata = q.query;
+console.log(qdata.month);
+
+
+
+
+The Built-in URL Module
+The URL module splits up a web address into readable parts.
+
+To include the URL module, use the require() method:
+
+var url = require('url');
+
+
+Parse an address with the url.parse() method, and it will return a URL object with each part of the address as properties:
+
+
+
+
+
+
+
+Node js important notes 
+1)	Under 1 port number multiple servers can’t be run 
+2)	Using http module we can create http server
+3)	Node js is an i/o based model and an i/o triggered model and event based  it is not auto triggered jobs 
+4)	In order to handle multiple request in node js we use internally  possex and libuv external api .
+5)	Nodejs is a platform independent  and open source .
+6)	Npm automatically installed by node js when you installed node js 
+7)	Node js installation is nothing but a  setting up a platform  and it is not a creation of server and you have to create your own server
+8)	In node js we have pre defined modules and we can able to import or install it and use it and we can create our own modules and  for installing and deletion  of predefined or our own node modules we use npm.
+9)	Npm is a biggest repositorty  and have millions of repository
+10)	The purpose of going to the server is for holding the resources and connect to the database for creation of web services.
+11)	“Write file sync “ method  only one user to allow to write the file and if another user came it will in wait statement
+12)	In node js first parameter is taken as error parameter
+13)	So we use write file method to  add a file and content if we don’t have the file and if already file was there we add the content and previous content file is deleted  and if you previous content u have to use append file
+
+
+
+
+
+
+

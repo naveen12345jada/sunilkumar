@@ -1,0 +1,312 @@
+
+
+------------------React -------------
+day 6 
+
+1)Component is a template used for building application 
+
+2)component contains 3 components 
+
+1)markups (presentation)--- >html
+2)styles---->css
+3)logic(javascript) and uses jsx extension ( javascript xtension )---> logic is defined in jsx or tsx(typescript) and is similar to javascript only  and added some additional features to it 
+
+3)react is a javascript library and  mainly used for building user interfaces and react is a componet based .
+
+advantages of components
+
+1) components allows reusability and easy extensibility ( we canot achieve using by javascript )
+2) you can build custom components or you can buld existing components providing by various third parties.
+
+
+------Building a React componet----
+
+1)react component is a function or calss of java script  that returns markups , syles and configures functionality . 
+
+2)component function or class is defined in simple javascript file.
+ex : component.js
+
+function name(){      class name {
+
+}                      }
+
+
+
+note ---)every file in javascript is a module  
+
+3)component  is a function or class  which  is defined  in  a module 
+4) in order to use  function or class from module you have to mark it as a module 
+
+ex :
+export function name(){     export  class name {
+
+}                          }
+
+or 
+
+5)you can configure default export 
+
+export default function name(){     export   default class name {
+
+}                                            }
+6) you have to import modules and components
+
+import {name} from module "Module" (if it is not default ) extension doesnot required
+
+import Name from module "Module"   (it it is default )extension doesnot required
+
+Note : Every Module In javascript have one default Function or one default class ( means it allows only one dault member in a module )
+
+7) every component must return Markup 
+
+8) function component returns  Markup by using Return Key Word 
+
+ex  export function name(){
+return("<markup></markup>");
+
+}
+
+Note: return is a jump statement 
+
+9) class  Component Returns Markups by using "render()"
+
+
+export class name{
+render(){
+<markup></markup>
+}
+
+Note : in Mordern javascript  we are avoiding to uses classes  in react 17 and react 18 especially beacuse earlier we have problems with functions now it is cleared and now classses have problems  better to use functions 
+
+Dynamic files ----> Src folder 
+static files ----> public folder
+
+
+----react architecture ----
+
+react running ---- localhost: 3000 by default 
+
+index.html---public folder 
+index .js----src  folder 
+
+root.render(
+<app/>
+)
+
+note : javascript strict mode  helps to avoid code voilations and javascript developers need to follow strict mode
+
+note: as per coding standers  a variable must be decclared and use 
+
+ex : 1  gives error if u remove strict mode it will works but it is not recommended
+<script>
+
+"use strict";
+x=10;
+console .log(x);
+
+</script>
+
+ex : 1  gives error 
+<script>
+
+"use strict";
+var x=10;
+console .log(x);
+
+</script>
+gives o/p as 10 ;
+
+
+----setup bootstrap applicaton ----
+
+1) open terminal 
+2)install following libraries 
+
+a) npm install bootstrap --save
+
+b) npm install bootstrap-icons --save
+
+3)go to index.js and import relative css files in bootstrap 
+
+import "../node_modules/bootstrap/dist/css/bootstrap.css"
+import "../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+
+note :if one terminal is project is running and we  can install any other  dependicies  by opening other terminal without affecting project
+
+note : in javascript attributes wil not work only properties will work  and similar to the react  className and idName
+
+--->jsx elements not allow void elements <----
+
+in react every element must have an end tag
+
+<p/>
+or
+<p></p>
+
+
+=-------------jsx rules -----
+
+1) you cannot use attributes only properties can be used 
+
+ex : <div class=""> ---------> invalid
+      <div className=""> ---------> valid
+
+2) every element requires end tag or self ending 
+
+<input>    -----> invalid
+
+<input>  </input> ------>valid
+
+<input/>-----> valid
+<img/> ---- > valid 
+
+
+3) component will not allows multiple lines of markup and you need a container and every thing must be rendered inside a container 
+
+<h2> hello </h2> 
+                        -----> invalid
+<p> welcome<p>   
+
+ 
+<div>
+
+<h2> hello </h2> 
+                        -----> valid
+<p> welcome<p> 
+
+</div>
+
+
+
+note -----( to beautify content in html is select html code and right click and  format docuement or  shift+alt+f)
+
+
+
+
+-----------------------------------------------day 7-------------------------------------------------
+
+
+Multiple components using in a web page 
+
+instead of div we can configure empty container and Fragment
+
+ 1)<div></div>      2)  <> </>  3) <React.Fragment> </React.Fragment>
+
+
+Vmax ----> view wport max
+
+----------------------- the first name of function will be capital letterin react when u are importing  other wise it will give error-----------------
+
+note--------> we can acess coponent inside another component 
+
+
+----> our application starts with index 
+
+---> react application can use class component but donot recommended to use
+
+----> call back function is executed according to situation 
+
+
+Ex :  function  heello(){      var naveen= function (){
+
+                                       }
+
+}                                              it is mainly used in call back functions and it is a ananamous 
+                                             function without a name  and  we can change a function  and                 
+ There is no  change in
+ function   and we can print                                  we can print multiple copies  using call back function 
+
+only one copy 
+                                                         ()=>{} we can change inorder to no change we can make it a const 
+                                                         const is means intialisation is mandatory 
+                                                          const  a variable canot be declared and assigned it must be assigned 
+
+
+
+
+const loginComponent =()=>{
+
+<h1> hello world  </h1>
+
+}
+
+export default loginComponent;
+
+to export a function above const variable of a  variable assigned a function is  we need to use export module 
+
+
+
+not Important 
+
+--------------------- react class component ----------------------------
+
+class is a progromming template in javascript
+
+class have a behaviour  of 
+
+a)model 
+
+b)blue print 
+
+c)entity
+
+
+
+
+
+class {--------------   entity-----------------            business requirements
+
+
+}------------------model -------------------------            data
+
+
+class is set to be a entity when it is mapping to business requirements
+
+class is set to be a model when it is mapping to data requirements
+
+
+members of class 
+
+a class comprises of 
+1)constructor
+2)properties 
+3)Acessors 
+4)Methods
+
+
+constructor is used for intantioan  
+
+properties is used for storing the data 
+
+to give a fine control over a property u need acessories 
+
+method defines  the actions to perform 
+
+
+q) can we decclare a variable inside a class ? 
+
+no 
+
+q) why we canot a a decclare a variable inside a class ?
+
+because variable is immutable and classes only stores only mutable properties 
+
+how we can can store a data in class?
+
+by using  properties we can store data because properties are mutable
+
+can we define a function inside a class ?
+no we have only methods 
+
+note : we can define a variables in methods 
+
+variable is not a direct member of  a class 
+
+
+------> what are difference between class component and function component <-------
+
+http is a stateless protocol
+
+ 
+
+

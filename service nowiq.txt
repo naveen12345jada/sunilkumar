@@ -1,0 +1,261 @@
+ 1. sort 0's and 1's in an array 
+
+
+
+Create a sticky navigation on a page
+
+primitive and non-primitive data types etc.
+
+1) Print matrix in clockwise manner:
+Input:
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+
+Output should be :
+1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10.
+
+Build a singleton class in javascript
+
+2. check if object is array or not. (you can check with isArray(arrr) or (typeof arrr && arrr.length)
+
+
+3. What will be the console.log statements print
+const obj = {
+name: 'Billy',
+sing: function () {
+this.age = "20"
+console.log('a' , this);
+var anotherFunction = function() {
+this.age = "30"
+console.log('b', this);
+}
+anotherFunction();
+}
+}
+obj.sing(); //first console will print properties of obj(name, age and sing) and second will print window object
+
+
+
+
+https://www.glassdoor.co.in/Interview/ServiceNow-Front-End-Developer-Interview-Questions-EI_IE403326.0,10_KO11,30.htm
+
+Why is front-end design important?
+
+
+
+
+4.
+abc();
+function abc() {
+console.log("1");
+}
+function abc() {
+console.log("2");
+}
+function abc() {
+console.log("3");
+}
+//it will execute the last function statements.
+2 Answers
+5.
+var x;
+(function test() {
+console.log('x --'+ x);
+})(); //this is self invoking so print undefine because x is not assigned any value yet
+var y = function() {
+console.log('In y' + x); //function is not called from anywhere so this wont execute
+}
+another(); //this will call function another written below
+var x = 10;
+console.log(x); //will print 10 because x is assigned value 10
+
+function another() {
+console.log(x); //will print undefine because x is not assigned any value yet
+}
+1 Answer
+6.
+largest path from root in a tree
+1 Answer
+7.
+Sorting of array that contains date
+var dates = ['1/2/2019' , '11/12/2013', '1/1/1980', '11/1/1934']
+3 Answers
+8. stop event bubbling at specified div.
+<div id="1"> =
+<div id ="2"> x
+<div id="3"> =
+<div id="4"> evt => {console.log("here")}
+
+Restructure and combine two json files and parse for missing data
+2. check if sum or 2 numbers in array are equal to a target number in O(N)
+
+
+. Check if strings in a list form a string. Just return True or False.
+for example:
+arr = ["hos","tal","pit","p","it","pi"]
+target = "hospital"
+
+
+3-sum. Design the schema for an e-commerce shopping cart. Design a URL shortener. Suppose you are the developer of a team based competitive video game. Each player on a team has a skill rating point. How would you minimize the difference of skill rating points on each team? Various SQL, Java, and javascript knowledge questions.
+
+1. Reverse a string. Reverse all words from a string
+2. Find smallest factors of a number
+3. Exception handling in Java, what would be the output of throwing exceptions
+
+Round1: 1. sort 0's and 1's in an array 2. browser history implementation with stack, visit the site, back and forward, returning the current after these actions 3. Implementing setTimeOut without using setTimeOut 4. Implementing forEach without using .forEach on an array Round2: 1. Implement debounce functionality 2. Promises 3. Event Bubbling 4. Object freeze 5. Event related questions, target, node and element 6. CSS position related questions
+
+
+Using html and css, make a red square
+
+Create a min stack
+
+
+Inheritance vs Composition
+Git: Merge vs rebase
+Generics
+Database: Left Join
+
+
+
+Restructure and combine two json files and parse for missing data
+Answer Question
+Use SQL to join two tables with some trickery
+Answer Question
+Use CSS to alternatively color a table of squares
+What is HTTP?
+How would you troubleshoot an email issue?
+
+difference between == and = in JS
+
+
+
+https://www.glassdoor.co.in/Interview/grep-command-JS-questions-difference-between-and-in-JS-QTN_4646123.htm
+
+
+
+How do you declare variables in Javascript?
+What are developer tools? How do you use it?
+What are ActiveX controls?
+How would you debug a javascript issue?
+What is a servlet?
+Difference between a thread and a process?
+What is a while/ do while loop?
+How would you find the max number in an array?
+What is a proxy server?
+What is an IP address and a subnet mask?
+What is XML? JSON?
+What are database locks?
+Basic SQL statements
+difference between ping and tracert?
+How does tracert work?
+
+
+
+What is HTTP?
+How would you troubleshoot an email issue?
+
+if your ice machine is not working, what are the steps to troubleshoot it
+
+
+1. JavaScript - Closures, Exception handling
+2. SQL - Couple of basic queries
+3. Customer support emphasized questions
+
+How to troubleshoot the problem (not a single solution but expected variety of possible solutions)
+
+Example of the troubleshooting that I did.
+
+How do you manage backlog issues
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------interview questions-----------------------------------------------
+
+what is scripting and debugging?
+scripting  is a form of computer programming is used to automate the execution of certain tasks 
+Debugging, on the other hand, is the process of identifying and fixing errors, or bugs, in computer code. 
+
+
+what is position sticky in simple single line definition ?
+Position: sticky is a CSS property that allows an element to remain in a certain position on the screen, even as the user scrolls through the page.
+
+Position: sticky is a CSS property that makes an element relative at certain position and when it reaches to threshold it acts like fixed even when scroller moves
+
+
+In JavaScript, primitive data types are data types that are not objects and have no methods. Examples include numbers, strings, booleans, null, and undefined.
+
+Non-primitive data types are data types that are objects and have methods. Examples include arrays and functions.
+
+------------------oops concepts --------------
+1)a class is a blueprint in which we can create an object using single class we can create multiple objects
+2)object is a real world physical entity anything which is physically present   it contains state and behaviours state is nothing but properties behaviour is nothing but an methods 
+
+
+
+3)inheritance 
+
+inheritance is the process of acquiring properties from superclass to the subclass
+
+we can achieve inheritance by using extends keyword in a subclass
+
+by using inheritance we can achieve code reusability and code redundancy
+ex ----
+a child inherits its characteristics and behaviours of its parent is a real world example of inheritance
+
+
+4)polymorphism 
+
+different forms of doing the same activity is nothing  but polymorphism
+
+there are two types of polymorphism 
+compile time polymorphism  and runtime polymorphism
+
+1)
+Compile-time polymorphism, also known as static polymorphism or method overloading,which is taken care by the compiler 
+
+2)run time polymorphism : 
+Run-time polymorphism, also known as dynamic polymorphism which   uses method overriding
+
+5)Abstraction : hiding the internal process and showing a functionality to the user 
+ex : atm machine 
+
+6)encapsulation is a process of wrapping up of Private data members along with public handler methods
+ex : capsule and class
+
+
+in left join we get unmatched records of left table along with matched records
+
+syntax : select columnname 
+         from tablename1 LEFTOUTERJOIN tablename2
+         ON tablename1.columnname= tablename2.columnname
+
+in right join we get unmatched records of right table along with matched records
+
+syntax : select columnname 
+         from tablename1 RIGHTOUTERJOIN tablename2
+         ON tablename1.columnname= tablename2.columnname
+
+INNER  JOIN 
+
+we use inner join to obtain only the matched records from a Tables
+
+syntax select cloumnname
+       from tablename1  INNERJOIN tablename2
+       ON tablename1.columnname= tablename2.columnname
+         
+
+Difference between array and linked list, under which situation would u choose one over the other
+
+
+
